@@ -103,7 +103,7 @@ class CategoriesViewController: SwipeTableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
-        let alertContoller = UIAlertController(title: NSLocalizedString("Add new Category", comment: ""), message: "", preferredStyle: .alert)
+        let alertContoller = UIAlertController(title: NSLocalizedString("Add New List", comment: ""), message: "", preferredStyle: .alert)
         
         var textField = UITextField()
         
@@ -115,6 +115,8 @@ class CategoriesViewController: SwipeTableViewController {
         let action = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) {(action) in
             
             self.saveCategory(with: textField.text ?? "New Category")
+            
+            _ = SweetAlert().showAlert("Success!", subTitle: "Your list has been added!", style: AlertStyle.success)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) {(action) in

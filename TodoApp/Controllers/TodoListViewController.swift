@@ -123,7 +123,7 @@ class TodoListViewController: SwipeTableViewController {
             
             self.saveItem(title: textField.text ?? "New Task")
             
-            SweetAlert().showAlert("Success!", subTitle: "Your item has been added!", style: AlertStyle.success)
+            _ = SweetAlert().showAlert("Success!", subTitle: "Your item has been added!", style: AlertStyle.success)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) {(action) in
